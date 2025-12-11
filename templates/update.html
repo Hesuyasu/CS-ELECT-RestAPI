@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Hero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px 0 0;
+        }
+
+        button:hover {
+            background: #1e7e34;
+        }
+
+        .btn-back {
+            background: #6c757d;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update Hero</h1>
+        <form method="POST">
+            <label>Hero ID: {{ hero.hero_id }}</label>
+
+            <label>Hero Name:</label>
+            <input type="text" name="hero_name" value="{{ hero.hero_name }}" required>
+
+            <label>Role:</label>
+            <select name="role" required>
+                <option value="Fighter" {% if hero.role=="Fighter" %}selected{% endif %}>Fighter</option>
+                <option value="Marksman" {% if hero.role=="Marksman" %}selected{% endif %}>Marksman</option>
+                <option value="Tank" {% if hero.role=="Tank" %}selected{% endif %}>Tank</option>
+                <option value="Assassin" {% if hero.role=="Assassin" %}selected{% endif %}>Assassin</option>
+                <option value="Mage" {% if hero.role=="Mage" %}selected{% endif %}>Mage</option>
+                <option value="Support" {% if hero.role=="Support" %}selected{% endif %}>Support</option>
+            </select>
+
+            <button type="submit">Update Hero</button>
+            <a href="/web/heroes" class="btn-back">Cancel</a>
+        </form>
+    </div>
+</body>
+
+</html>

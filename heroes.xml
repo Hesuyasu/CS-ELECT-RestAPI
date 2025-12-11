@@ -1,0 +1,84 @@
+<game>
+  <heroes>
+    <hero id="1">
+      <name>Alucard</name>
+      <role>Fighter</role>
+    </hero>
+    <hero id="2">
+      <name>Layla</name>
+      <role>Marksman</role>
+    </hero>
+    <hero id="3">
+      <name>Tigreal</name>
+      <role>Tank</role>
+    </hero>
+    <hero id="4">
+      <name>Gusion</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="5">
+      <name>Eudora</name>
+      <role>Mage</role>
+    </hero>
+    <hero id="6">
+      <name>Rafaela</name>
+      <role>Support</role>
+    </hero>
+    <hero id="7">
+      <name>Miya</name>
+      <role>Marksman</role>
+    </hero>
+    <hero id="8">
+      <name>Franco</name>
+      <role>Tank</role>
+    </hero>
+    <hero id="9">
+      <name>Hayabusa</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="10">
+      <name>Lancelot</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="11">
+      <name>Bruno</name>
+      <role>Marksman</role>
+    </hero>
+    <hero id="12">
+      <name>Ixia</name>
+      <role>Marksman</role>
+    </hero>
+    <hero id="13">
+      <name>Hanabi</name>
+      <role>Marksman</role>
+    </hero>
+    <hero id="14">
+      <name>Ling</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="15">
+      <name>Helcurt</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="16">
+      <name>Joy</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="17">
+      <name>Hanzo</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="18">
+      <name>Nolan</name>
+      <role>Assassin</role>
+    </hero>
+    <hero id="19">
+      <name>Atlas</name>
+      <role>Tank</role>
+    </hero>
+    <hero id="20">
+      <name>Akai</name>
+      <role>Tank</role>
+    </hero>
+  </heroes>
+</game>

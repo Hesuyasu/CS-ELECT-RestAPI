@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Heroes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .search-box input,
+        .search-box select {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 0 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-update {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-back {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-create {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-search {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-clear {
+            background: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Heroes ({{ heroes|length }})</h1>
+        <a href="/" class="btn btn-back">← Back to Home</a>
+        <a href="/web/heroes/create" class="btn btn-create">+ Create New Hero</a>
+
+        <!-- Search Form -->
+        <div class="search-box">
+            <h3>🔍 Search Heroes</h3>
+            <form method="GET" action="/web/heroes">
+                <input type="text" name="search_name" placeholder="Search by name..." value="{{ search_name or '' }}">
+                <select name="search_role">
+                    <option value="">All Roles</option>
+                    {% for role in roles %}
+                    <option value="{{ role }}" {% if search_role==role %}selected{% endif %}>{{ role }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-search">Search</button>
+                <a href="/web/heroes" class="btn btn-clear">Clear</a>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hero Name</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if heroes %}
+                {% for hero in heroes %}
+                <tr>
+                    <td>{{ hero.hero_id }}</td>
+                    <td>{{ hero.hero_name }}</td>
+                    <td>{{ hero.role }}</td>
+                    <td>
+                        <a href="/web/heroes/update/{{ hero.hero_id }}" class="btn btn-update">Edit</a>
+                        <form action="/web/heroes/delete/{{ hero.hero_id }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-delete"
+                                onclick="return confirm('Delete {{ hero.hero_name }}?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4" style="text-align: center;">No heroes found matching your search criteria.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heroes API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heroes REST API</h1>
+        <p>CS ELECT FINAL PROJECT</p>
+        <h3>Choose an action:</h3>
+        <a href="/web/heroes" class="btn">View All Heroes</a>
+        <a href="/web/heroes/create" class="btn">Create New Hero</a>
+        <hr>
+        <h3>API Endpoints (for Postman):</h3>
+        <ul>
+            <li>GET /api/heroes - Get all heroes</li>
+            <li>GET /api/heroes/&lt;id&gt; - Get hero by ID</li>
+            <li>POST /api/heroes - Create new hero</li>
+            <li>PUT /api/heroes/&lt;id&gt; - Update hero</li>
+            <li>DELETE /api/heroes/&lt;id&gt; - Delete hero</li>
+        </ul>
+    </div>
+</body>
+</html>
